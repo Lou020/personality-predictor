@@ -1,0 +1,11 @@
+# TODO: pin exact versions after first install (see README)
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+hyperopt
+mlflow
+streamlit
+joblib
+ipykernel
