@@ -7,13 +7,18 @@ from pathlib import Path
 # Paths (relative to the repo root, so it works from any working directory)
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT_DIR / "data" / "data.csv"
-MODEL_DIR = ROOT_DIR / "models"
-BEST_MODEL_PATH = MODEL_DIR / "best_model.joblib"
 FIGURES_DIR = ROOT_DIR / "reports" / "figures"
 
 # Reproducibility
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
+CV_FOLDS = 5
+SCORING = "f1_macro"
+
+# Experiment tracking (absolute paths, so notebooks and app use the same store)
+MLFLOW_TRACKING_URI = f"sqlite:///{(ROOT_DIR / 'mlflow.db').as_posix()}"
+MLFLOW_ARTIFACT_DIR = ROOT_DIR / "mlartifacts"
+EXPERIMENT_NAME = "personality-predictor"
 
 # Columns
 TARGET = "target"
