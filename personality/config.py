@@ -37,3 +37,28 @@ AGE_MIN, AGE_MAX = 13, 100
 
 # Fixed class order, so every chart and confusion matrix looks the same
 CLASS_ORDER = ["Moderate", "Resilient", "Overcontroller", "Undercontroller"]
+
+# Question texts for the app (from data/codebook.txt)
+QUESTIONS = {
+    "N1": "I get stressed out easily.",
+    "N2": "I am relaxed most of the time.",
+    "N3": "I worry about things.",
+    "N4": "I seldom feel blue.",
+    "N5": "I am easily disturbed.",
+    "N6": "I get upset easily.",
+    "N7": "I change my mood a lot.",
+    "N8": "I have frequent mood swings.",
+    "N9": "I get irritated easily.",
+    "N10": "I often feel blue.",
+    "E1": "I am the life of the party.",
+    "E3": "I feel comfortable around people.",
+    "E4": "I keep in the background.",
+    "E5": "I start conversations.",
+    "E7": "I talk to a lot of different people at parties.",
+    "E9": "I don't mind being the center of attention.",
+    "E10": "I am quiet around strangers.",
+    "C4": "I make a mess of things.",
+    "A4": "I sympathize with others' feelings.",
+}
+GENDER_OPTIONS = ["Female", "Male", "Other"]
+HAND_OPTIONS = ["Right", "Left", "Both"]
