@@ -19,7 +19,7 @@ BACKGROUND = "#0B0E14"   # near-black, slightly blue
 PANEL = "#121722"        # for boxes / table backgrounds
 TEXT = "#D6E2EA"         # pale terminal white
 MUTED = "#5C6878"        # axes, grid, secondary text
-ACCENT = "#FFB000"       # amber HUD accent (titles, highlights)
+ACCENT = "#CF9A3E"       # amber HUD accent (titles, highlights)
 
 # --- One fixed color per personality type (red-green safe) --------------------
 CLASS_COLORS = dict(zip(
@@ -27,14 +27,14 @@ CLASS_COLORS = dict(zip(
     ["#8A93A8",   # Moderate: neutral steel (the "default" type)
      "#00D9FF",   # Resilient: calm cyan
      "#A970FF",   # Overcontroller: violet
-     "#FFB000"],  # Undercontroller: amber
+     "#CF9A3E"],  # Undercontroller: amber
 ))
 
 # --- Colormaps for heatmaps / correlations ------------------------------------
 # Sequential: dark -> cyan (for counts, importance, confusion matrix)
 SEQ_CMAP = LinearSegmentedColormap.from_list("hud_seq", [BACKGROUND, "#0A4A5C", "#00D9FF"])
 # Diverging: violet <- dark -> amber (for correlations, no red/green)
-DIV_CMAP = LinearSegmentedColormap.from_list("hud_div", ["#A970FF", BACKGROUND, "#FFB000"])
+DIV_CMAP = LinearSegmentedColormap.from_list("hud_div", ["#A970FF", BACKGROUND, "#CF9A3E"])
 
 FONT = "DejaVu Sans Mono"  # ships with matplotlib, works on every machine
 
