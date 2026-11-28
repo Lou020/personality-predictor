@@ -35,5 +35,5 @@ def get_best_run_id(metric: str = "f1_macro") -> str:
     setup_mlflow()
     runs = mlflow.search_runs(order_by=[f"metrics.{metric} DESC"], max_results=1)
     if runs.empty:
-        raise RuntimeError("No MLflow runs found. Run notebooks/03_tune_and_track.ipynb first.")
+        raise RuntimeError("No MLflow runs found. Run notebooks/03_modeling.ipynb first.")
     return runs.loc[0, "run_id"]

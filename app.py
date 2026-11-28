@@ -1,3 +1,4 @@
+import mlflow
 import pandas as pd
 import streamlit as st
 
@@ -8,14 +9,21 @@ from personality.tracking import get_best_run_id, load_model
 
 
 @st.cache_resource
-def get_model():
-    """Load the best model from MLflow once and keep it in memory."""
-    return load_model(get_best_run_id())
+def get_model_and_info():
+    """Load the best model from MLflow once, together with its run metadata."""
+    run_id = get_best_run_id()
+    run = mlflow.get_run(run_id)
+    return load_model(run_id), {
+        "run_id": run_id,
+        "model": run.data.params.get("model", "unknown"),
+        "f1": run.data.metrics.get("f1_macro", float("nan")),
+    }
 
 
-model = get_model()
+model, info = get_model_and_info()
 
 st.title("Personality Type Predictor")
+st.caption(f"Model: {info['model']} · macro F1 {info['f1']:.3f} · MLflow run {info['run_id']}")
 st.write("Rate each statement from 1 (Disagree) to 5 (Agree).")
 
 answers = {}

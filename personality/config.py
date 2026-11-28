@@ -7,6 +7,7 @@ from pathlib import Path
 # Paths (relative to the repo root, so it works from any working directory)
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT_DIR / "data" / "data.csv"
+PROCESSED_DATA_PATH = ROOT_DIR / "data" / "data_processed.csv"  # written by 01_eda.ipynb
 FIGURES_DIR = ROOT_DIR / "reports" / "figures"
 
 # Reproducibility
